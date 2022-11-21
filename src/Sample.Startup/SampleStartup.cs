@@ -6,9 +6,7 @@
     using Components.StateMachines;
     using Components.StateMachines.OrderStateMachineActivities;
     using MassTransit;
-    using MassTransit.ExtensionsDependencyInjectionIntegration;
     using MassTransit.MongoDbIntegration.MessageData;
-    using MassTransit.Platform.Abstractions;
     using Microsoft.Extensions.DependencyInjection;
     using Warehouse.Contracts;
 
@@ -16,7 +14,7 @@
     public class SampleStartup :
         IPlatformStartup
     {
-        public void ConfigureMassTransit(IServiceCollectionBusConfigurator configurator, IServiceCollection services)
+        public void ConfigureMassTransit(IBusRegistrationConfigurator configurator, IServiceCollection services)
         {
             services.AddScoped<AcceptOrderActivity>();
 
