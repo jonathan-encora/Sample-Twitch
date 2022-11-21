@@ -11,9 +11,7 @@
     using Components.StateMachines.OrderStateMachineActivities;
     using MassTransit;
     using MassTransit.Courier.Contracts;
-    using MassTransit.Definition;
     using MassTransit.MongoDbIntegration.MessageData;
-    using MassTransit.RabbitMqTransport;
     using Microsoft.ApplicationInsights;
     using Microsoft.ApplicationInsights.DependencyCollector;
     using Microsoft.ApplicationInsights.Extensibility;
