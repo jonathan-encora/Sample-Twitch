@@ -5,10 +5,6 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="MassTransit.Platform.Abstractions" Version="7.2.4" />
-  </ItemGroup>
-
-  <ItemGroup>
     <ProjectReference Include="..\Sample.Components\Sample.Components.csproj" />
   </ItemGroup>
 

@@ -7,7 +7,6 @@
 
   <ItemGroup>
     <PackageReference Include="MassTransit" Version="8.0.8" />
-    <PackageReference Include="MassTransit.Platform.Abstractions" Version="7.2.4" />
     <PackageReference Include="Microsoft.AspNet.WebApi.Client" Version="5.2.7" />
     <PackageReference Include="Newtonsoft.Json" Version="12.0.3" />
   </ItemGroup>
