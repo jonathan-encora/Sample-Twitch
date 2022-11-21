@@ -3,11 +3,11 @@ namespace Sample.Components.Tests
     using System;
     using System.Linq;
     using System.Threading.Tasks;
-    using Automatonymous.Graphing;
-    using Automatonymous.Visualizer;
     using Contracts;
     using MassTransit;
+    using MassTransit.SagaStateMachine;
     using MassTransit.Testing;
+    using MassTransit.Visualizer;
     using NUnit.Framework;
     using StateMachines;
 

@@ -2,14 +2,12 @@ namespace Sample.Components.StateMachines.OrderStateMachineActivities
 {
     using System;
     using System.Threading.Tasks;
-    using Automatonymous;
     using Contracts;
-    using GreenPipes;
     using MassTransit;
 
 
     public class AcceptOrderActivity :
-        Activity<OrderState, OrderAccepted>
+        IStateMachineActivity<OrderState, OrderAccepted>
     {
         public void Probe(ProbeContext context)
         {
@@ -21,7 +19,7 @@ namespace Sample.Components.StateMachines.OrderStateMachineActivities
             visitor.Visit(this);
         }
 
-        public async Task Execute(BehaviorContext<OrderState, OrderAccepted> context, Behavior<OrderState, OrderAccepted> next)
+        public async Task Execute(BehaviorContext<OrderState, OrderAccepted> context, IBehavior<OrderState, OrderAccepted> next)
         {
             Console.WriteLine("Hello, World. Order is {0}", context.Data.OrderId);
 
@@ -39,7 +37,7 @@ namespace Sample.Components.StateMachines.OrderStateMachineActivities
             await next.Execute(context).ConfigureAwait(false);
         }
 
-        public Task Faulted<TException>(BehaviorExceptionContext<OrderState, OrderAccepted, TException> context, Behavior<OrderState, OrderAccepted> next)
+        public Task Faulted<TException>(BehaviorExceptionContext<OrderState, OrderAccepted, TException> context, IBehavior<OrderState, OrderAccepted> next)
             where TException : Exception
         {
             return next.Faulted(context);
